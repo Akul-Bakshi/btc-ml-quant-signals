@@ -1,0 +1,144 @@
+bot:
+  log_level: INFO
+  mode: semi_auto
+  notify_telegram: true
+dashboard:
+  enabled: true
+  port: 8501
+  refresh_seconds: 30
+data:
+  lookback_days: 1460
+  train_test_split: 0.8
+  walk_forward_windows: 6
+exchange:
+  name: binance
+  paper_mode: true
+indicators:
+  math:
+  - Fibonacci
+  - GoldenRatio
+  - Gann
+  - Harmonic
+  momentum:
+  - RSI
+  - Stochastic
+  - ROC
+  trend:
+  - EMA
+  - MACD
+  - Ichimoku
+  - Supertrend
+  volatility:
+  - BollingerBands
+  - ATR
+  volume:
+  - VWAP
+  - OBV
+  - VolumeDelta
+mathematical_strategies:
+  elliott_wave:
+    enabled: true
+  fibonacci:
+    enabled: true
+    extension_levels:
+    - 1.0
+    - 1.272
+    - 1.414
+    - 1.618
+    - 2.618
+    golden_ratio: 1.6180339887
+    retracement_levels:
+    - 0.236
+    - 0.382
+    - 0.5
+    - 0.618
+    - 0.786
+  gann:
+    enabled: true
+  golden_ratio_multiplier:
+    enabled: true
+  harmonic_patterns:
+    enabled: true
+  pi_cycle:
+    enabled: true
+ml_strategies:
+  advanced:
+    reinforcement_learning: false
+    sentiment_analysis: false
+  sequence:
+    cnn_lstm: true
+    gru: true
+    lstm: true
+    transformer: true
+  supervised:
+    lightgbm: true
+    logistic_regression: true
+    random_forest: true
+    svm: true
+    xgboost: true
+  unsupervised:
+    autoencoder: true
+    isolation_forest: true
+    kmeans_regimes: true
+    pca: true
+model:
+  confidence_threshold: 0.65
+  type: xgboost
+quant_strategies:
+  autocorrelation:
+    enabled: true
+  hidden_markov_model:
+    enabled: true
+    n_states: 3
+  hurst_exponent:
+    enabled: true
+  kalman_filter:
+    enabled: true
+  mean_reversion:
+    enabled: true
+    zscore_threshold: 2.0
+  momentum:
+    enabled: true
+    lookback_windows:
+    - 5
+    - 10
+    - 20
+    - 50
+  pairs_trading:
+    enabled: true
+    symbols:
+    - BTC/USDT
+    - ETH/USDT
+  volatility_regime:
+    enabled: true
+    regimes:
+    - low
+    - medium
+    - high
+risk:
+  atr_stop_multiplier: 2.0
+  max_drawdown_pct: 0.15
+  max_position_pct: 0.15
+  stop_loss_pct: 0.006
+  take_profit_pct: 0.015
+symbols:
+  primary: BTC/USDT
+  secondary: ETH/USDT
+timeframes:
+  entry: 15m
+  primary: 1d
+  scalp: 5m
+  secondary: 4h
+  tertiary: 1h
+trading:
+  confirmation_timeframe: 1h
+  direction_timeframes:
+  - 1d
+  - 4h
+  entry_timeframe: 15m
+  ml_confidence_threshold: 0.55
+  risk_per_trade_pct: 0.02
+  stop_loss_pct: 0.006
+  take_profit_pct: 0.015
+  time_stop_candles: 8
+  train_cutoff_date: '2025-10-01'
